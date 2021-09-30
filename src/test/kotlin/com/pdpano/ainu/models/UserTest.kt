@@ -1,48 +1,24 @@
 package com.pdpano.ainu.models
 
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
+import java.time.LocalDate
 
-import org.junit.jupiter.api.Assertions.*
+internal class UserTest: Spek({
+    describe("User Test") {
+        context("Ao criar um usuário") {
+            it("Todos os atributos deverão ser mapeados") {
+                val user: User = User (
+                    1L,
+                    "lucas",
+                    LocalDate.now(),
+                    "lucas.martins@ainu.com.br",
+                    "1233211232"
+                )
 
-internal class UserTest {
-
-    @Test
-    fun getId() {
+                assertNotNull(user)
+            }
+        }
     }
-
-    @Test
-    fun getName() {
-    }
-
-    @Test
-    fun getBirth() {
-    }
-
-    @Test
-    fun getEmail() {
-    }
-
-    @Test
-    fun getCpf() {
-    }
-
-    @Test
-    fun is_active() {
-    }
-
-    @Test
-    fun getCreated_at() {
-    }
-
-    @Test
-    fun testToString() {
-    }
-
-    @Test
-    fun testHashCode() {
-    }
-
-    @Test
-    fun testEquals() {
-    }
-}
+})
