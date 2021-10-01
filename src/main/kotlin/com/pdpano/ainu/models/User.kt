@@ -12,9 +12,9 @@ data class User(
     val name: String,
     @Column(nullable = false)
     val birth: LocalDate,
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     val email: String,
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     val cpf: String,
     val is_active: Boolean = true,
     val created_at: LocalDateTime = LocalDateTime.now()
