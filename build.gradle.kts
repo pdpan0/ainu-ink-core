@@ -26,9 +26,6 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 //	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	// Spek
-	testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.17")
-	testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.17")
 }
 
 tasks.withType<KotlinCompile> {
@@ -39,7 +36,5 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.withType<Test> {
-	useJUnitPlatform {
-		includeEngines( "spek2")
-	}
+	useJUnitPlatform()
 }
