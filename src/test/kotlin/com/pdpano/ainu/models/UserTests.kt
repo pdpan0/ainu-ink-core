@@ -1,6 +1,6 @@
 package com.pdpano.ainu.models
 
-import com.fasterxml.jackson.databind.ObjectMapper
+import com.google.gson.Gson
 import com.pdpano.ainu.services.UserService
 import org.slf4j.Logger
 import com.pdpano.ainu.utils.LogUtils
@@ -20,7 +20,7 @@ import java.time.LocalDate
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class UserTest {
+class UserTests {
     @Autowired
     private lateinit var mockMvc: MockMvc
     @Autowired
@@ -44,8 +44,7 @@ class UserTest {
     @Test
     fun `test criando usuario`() {
         val newUser = User(0L, "Lucas", LocalDate.of(2001, 2, 16), "lucas-test@ainu.com.br", "1233211233X")
-
-        val json = ObjectMapper().findAndRegisterModules().writeValueAsString(newUser)
+        val json = Gson().toJson(newUser)
 
         mockMvc.perform(
             MockMvcRequestBuilders.post("/v1/users").accept(MediaType.APPLICATION_JSON)
