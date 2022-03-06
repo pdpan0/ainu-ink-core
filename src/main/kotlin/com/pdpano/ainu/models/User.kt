@@ -16,6 +16,5 @@ data class User(
     val email: String,
     @Column(nullable = false, unique = true)
     val cpf: String,
-    val is_active: Boolean = true,
     val created_at: LocalDateTime = LocalDateTime.now()
 )
