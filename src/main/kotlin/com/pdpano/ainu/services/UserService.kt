@@ -17,4 +17,6 @@ class UserService(private val repository: IUserRepository) {
     }
 
     fun getUserByEmail(email: String) = repository.findUserByEmail(email)
+
+    fun getUsers(): MutableList<User> = repository.findAll()
 }
