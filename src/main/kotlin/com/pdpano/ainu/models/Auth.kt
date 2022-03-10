@@ -1,11 +1,8 @@
 package com.pdpano.ainu.models
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import java.time.LocalDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity(name = "tb_auth")
 class Auth (
@@ -15,7 +12,12 @@ class Auth (
     val username: String,
     @Column(nullable = false)
     val password: String,
-    val user_id: Int,
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    val user: User,
     val last_login: LocalDateTime,
-    val is_active: Boolean = true
+    val is_active: Boolean = true,
+    @OneToMany(mappedBy = "authentication")
+    val authenticantion_roles: List<AuthRoles> = mutableListOf()
 )
