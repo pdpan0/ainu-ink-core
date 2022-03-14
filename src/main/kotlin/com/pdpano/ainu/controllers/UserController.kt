@@ -1,6 +1,6 @@
 package com.pdpano.ainu.controllers
 
-import com.pdpano.ainu.models.User
+import com.pdpano.ainu.entities.User
 import com.pdpano.ainu.services.UserService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

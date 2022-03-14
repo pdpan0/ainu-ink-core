@@ -1,4 +1,4 @@
-package com.pdpano.ainu.models
+package com.pdpano.ainu.entities
 
 import com.google.gson.Gson
 import com.pdpano.ainu.services.UserService

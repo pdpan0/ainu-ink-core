@@ -1,6 +1,6 @@
 package com.pdpano.ainu.services
 
-import com.pdpano.ainu.models.Auth
+import com.pdpano.ainu.entities.Auth
 import com.pdpano.ainu.repositories.IAuthRepository
 import org.springframework.stereotype.Service
 

@@ -1,4 +1,4 @@
-package com.pdpano.ainu.models
+package com.pdpano.ainu.entities
 
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -18,5 +18,5 @@ data class User(
     val cpf: String,
     val created_at: LocalDateTime = LocalDateTime.now(),
     @OneToOne(mappedBy = "user")
-    val authentication: Auth
+    val authentication: Auth? = null
 )
