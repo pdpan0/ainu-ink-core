@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 @Entity(name = "tb_auth_roles")
-class AuthRoles(
+data class AuthRoles(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     @JsonIgnore
