@@ -13,3 +13,5 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+jwt:
+  secret: H5E0x7IWTHBQI95D06v8rMCdQ2HFqTROc654ieno88FqUBCj9zTAcD9qGzZgG69

@@ -5,8 +5,9 @@ import kotlin.jvm.Throws
 import com.pdpano.ainu.entities.User
 import com.pdpano.ainu.repositories.IUserRepository
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
-@Service
+@Service @Transactional
 class UserService(private val repository: IUserRepository) {
 
     @Throws(UserNotFoundException::class)

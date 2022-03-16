@@ -8,7 +8,7 @@ class AuthDetail(
     private val auth: Auth
 ): UserDetails {
 
-    override fun getAuthorities() = null
+    override fun getAuthorities() = auth.authenticantion_roles
 
     override fun getPassword(): String = auth.password
 

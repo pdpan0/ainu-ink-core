@@ -1,10 +1,11 @@
 package com.pdpano.ainu.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnore
+import org.springframework.security.core.GrantedAuthority
 import javax.persistence.*
 
 @Entity(name = "tb_auth_roles")
-class AuthRoles(
+data class AuthRoles(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     @JsonIgnore
@@ -14,4 +15,6 @@ class AuthRoles(
     @ManyToOne
     @JoinColumn(name = "role_id")
     val role: Role
-)
+) : GrantedAuthority {
+    override fun getAuthority(): String = role.name
+}

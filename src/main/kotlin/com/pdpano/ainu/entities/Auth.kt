@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity(name = "tb_auth")
-class Auth (
+data class Auth (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     @Column(nullable = false, unique = true)
@@ -18,6 +18,7 @@ class Auth (
     val user: User,
     val last_login: LocalDateTime,
     val is_active: Boolean = true,
-    @OneToMany(mappedBy = "authentication")
+    //  TODO: Anotação many to many com a roles
+    @OneToMany(mappedBy = "authentication", fetch = FetchType.EAGER)
     val authenticantion_roles: List<AuthRoles> = mutableListOf()
 )

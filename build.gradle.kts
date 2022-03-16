@@ -26,6 +26,9 @@ dependencies {
 	implementation("com.google.code.gson:gson:2.9.0")
 	implementation("org.flywaydb:flyway-core:8.5.2")
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("io.jsonwebtoken:jjwt:0.9.1")
+	implementation("javax.xml.bind:jaxb-api:2.4.0-b180830.0359")
+
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
